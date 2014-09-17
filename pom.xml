@@ -46,7 +46,7 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>cobertura-maven-plugin</artifactId>
-                    <version>2.6</version>
+                    <version>2.5.2</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -63,7 +63,19 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
-                <version>2.6</version>
+                <version>2.5.2</version>
+                <configuration>
+                    <instrumentation>
+                        <!--<ignores>-->
+                        <!--<ignore>com.example.boringcode.*</ignore>-->
+                        <!--</ignores>-->
+                        <excludes>
+                            <exclude>com/lemon/android/**/R.class</exclude>
+                            <exclude>com/lemon/android/**/BuildConfig.class</exclude>
+                            <exclude>com/lemon/android/**/*$*.class</exclude>
+                        </excludes>
+                    </instrumentation>
+                </configuration>
             </plugin>
         </plugins>
     </build>
@@ -73,7 +85,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
-                <version>2.6</version>
+                <version>2.5.2</version>
             </plugin>
         </plugins>
     </reporting>
